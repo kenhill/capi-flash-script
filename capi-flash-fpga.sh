@@ -32,11 +32,13 @@ fi
 
 if [ $# -eq 0 ]; then
   printf "Input arguments missisng\nUsage: sudo capi-flash-fpga.sh <path-to-bit-file>\n"
+  exit 1
 fi
 
 # check if file exit
 if [[ ! -e $1 ]]; then
   printf "ERROR: $1 not found\n"
+  exit 1
 fi
 
 FILENAME=$1
